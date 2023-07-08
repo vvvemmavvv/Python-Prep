@@ -1,25 +1,14 @@
-from os import path
 
+def divide_elementos_de_lista(lista, divisor):
+    try:
+        return [ i / divisor for i in lista]
 
-class Auto:
-    def __init__(self, marca, modelo, anio, color):
-        self.marca = marca
-        self.modelo = modelo
-        self.anio = anio
-        self.color = color
-        self.velocidad_actual = 0
-
-    def acelerar(self, velocidad):
-        self.velocidad_actual += velocidad
-    def frenar(self, velocidad):
-        self.velocidad_actual -= velocidad
-    def obtener_velocidad_actual(self):
-        return self.velocidad_actual
+    except ZeroDivisionError as e:
+        print(e)
+        return(lista)
     
-mi_auto = Auto('bmw', '325i', '1993', 'gris')
+lista = list(range(10))
+divisor = 0
 
-mi_auto.acelerar(15)
-
-mi_auto.obtener_velocidad_actual()
-
-sys path
+print(divide_elementos_de_lista(lista,divisor))
+        
